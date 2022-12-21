@@ -15,6 +15,7 @@ const BarcodeScannerComponent = ({
 }: {
   onUpdate: (arg0: unknown, arg1?: Result) => void;
   onError?: (arg0: string | DOMException) => void;
+  onUserMedia?: (stream: MediaStream) => void;
   width?: number | string;
   height?: number | string;
   facingMode?: "environment" | "user";
@@ -96,6 +97,7 @@ const BarcodeScannerComponent = ({
       }
       audio={false}
       onUserMediaError={onError}
+      onUserMedia={onUserMedia}
     />
   );
 };
